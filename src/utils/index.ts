@@ -11,7 +11,7 @@ const findCodeBySourceMap = async (stackFrame: any) => {
   const sourceMap = await getSourceMap(stackFrame.fileName + '.map')
   const fileContent = sourceMap.data
   // 解析map文件
-  const consumer = new sourceMap.SourceMapConsumer(fileContent)
+  const consumer = await new sourceMap.SourceMapConsumer(fileContent)
   // 通过报错的位置查找对应的源文件的名称及其报错行数
   const originalPosition = consumer.originalPositionFor({
     line: stackFrame.lineNumber,
