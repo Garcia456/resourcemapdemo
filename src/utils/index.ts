@@ -8,8 +8,8 @@ const getSourceMap = async (url: string) => {
 }
 const findCodeBySourceMap = async (stackFrame: any) => {
   // 获取map文件
-  const sourceMap = await getSourceMap(stackFrame.fileName + '.map')
-  const fileContent = sourceMap.data
+  const sourceData = await getSourceMap(stackFrame.fileName + '.map')
+  const fileContent = sourceData.data
   // 解析map文件
   const consumer = await new sourceMap.SourceMapConsumer(fileContent)
   // 通过报错的位置查找对应的源文件的名称及其报错行数
