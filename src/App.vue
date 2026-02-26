@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
-onMounted(() => {
-  let testNum = null
-  if(testNum.length > 1) console.log(testNum)
-})
+import HomeView from './views/HomeView.vue'
+import ErrorView from './views/ErrorView.vue'
 
 </script>
 
@@ -17,7 +15,8 @@ onMounted(() => {
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <ErrorView></ErrorView>
+  <HomeView></HomeView>
 </template>
 
 <style scoped>
