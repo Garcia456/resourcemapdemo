@@ -4,11 +4,6 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
-      path: '/app',
-      name: 'app',
-      component: () => import('../components/HelloWorld.vue')
-    },
-    {
       path: '/trigger',
       name: 'trigger',
       component: () => import('../views/ErrorView.vue')

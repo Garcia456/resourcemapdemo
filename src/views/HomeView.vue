@@ -1,7 +1,7 @@
 <template>
   <div v-if="isError">
     <pre>
-      {{ js_error.stack }}
+      {{ js_error.error_name }}
     </pre>
     <el-collapse v-model="activeName" accordion>
       <el-collapse-item  

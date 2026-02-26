@@ -1,35 +1,61 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
-import HomeView from './views/HomeView.vue'
-import ErrorView from './views/ErrorView.vue'
-
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="app-container">
+    <div class="nav-container">
+      <RouterLink to="/home" class="nav-link">Home</RouterLink>
+      <el-divider direction="vertical" />
+      <RouterLink to="/trigger" class="nav-link">触发js异常</RouterLink>
+    </div>
+    <div class="content-container">
+      <RouterView />
+    </div>
   </div>
-  <ErrorView></ErrorView>
-  <HomeView></HomeView>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.nav-container {
+  background-color: #f5f7fa;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e4e7ed;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.nav-link {
+  text-decoration: none;
+  color: #606266;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #409eff;
+  background-color: #ecf5ff;
+}
+
+.nav-link.router-link-active {
+  color: #409eff;
+  background-color: #ecf5ff;
+}
+
+.content-container {
+  flex: 1;
+  padding: 24px;
+}
+
+:deep(.el-divider) {
+  margin: 0 8px;
 }
 </style>
