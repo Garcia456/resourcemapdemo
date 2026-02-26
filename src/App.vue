@@ -8,6 +8,8 @@ import { RouterLink, RouterView } from 'vue-router'
       <RouterLink to="/home" class="nav-link">Home</RouterLink>
       <el-divider direction="vertical" />
       <RouterLink to="/trigger" class="nav-link">触发js异常</RouterLink>
+      <RouterLink to="/record" class="nav-link">录制</RouterLink>
+      <RouterLink to="/replay" class="nav-link">回放</RouterLink>
     </div>
     <div class="content-container">
       <RouterView />
